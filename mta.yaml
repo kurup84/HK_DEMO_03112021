@@ -1,5 +1,5 @@
 ID: HK_DEMO_03112021
-_schema-version: "2.1"
+_schema-version: '2.1'
 version: 0.0.1
 modules:
   - name: HK_DEMO_03112021-db
@@ -10,6 +10,7 @@ modules:
       disk-quota: 256M
     requires:
       - name: HK_DEMO_03112021-db-hdi-container
+    description: t
   - name: HK_DEMO_03112021-srv
     type: nodejs
     path: srv
@@ -19,11 +20,11 @@ modules:
     provides:
       - name: srv_api
         properties:
-          url: ${default-url}
+          url: '${default-url}'
     requires:
       - name: HK_DEMO_03112021-db-hdi-container
 resources:
   - name: HK_DEMO_03112021-db-hdi-container
     type: com.sap.xs.hdi-container
     properties:
-      hdi-container-name: ${service-name}
+      hdi-container-name: '${service-name}'
